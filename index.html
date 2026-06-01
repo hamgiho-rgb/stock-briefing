@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>단타 브리핑</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --navy:#10233f; --blue:#1f4e79; --accent:#2563eb; --red:#d92d20; --green:#039855;
+    --grey:#667085; --ink:#1d2939; --line:#e3e8ef; --bg:#eef2f7; --card:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;-webkit-text-size-adjust:100%}
+  .wrap{max-width:680px;margin:0 auto;padding:14px 14px 40px}
+  .header{background:var(--navy);border-radius:14px;padding:18px 18px 16px;position:relative;overflow:hidden;box-shadow:0 6px 20px rgba(16,35,63,.18)}
+  .header::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent)}
+  .header h1{color:#fff;font-size:22px;font-weight:800;letter-spacing:-.5px}
+  .header .date{color:#9db8df;font-size:13px;margin-top:4px}
+  .header .tag{position:absolute;right:16px;top:16px;text-align:right;color:#cfe0ff;font-size:11px;line-height:1.5}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+  .m{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 6px;text-align:center}
+  .m .lab{font-size:11px;color:var(--grey)}
+  .m .val{font-size:16px;font-weight:800;margin:3px 0;letter-spacing:-.5px}
+  .m .sub{font-size:11px;font-weight:700}
+  .up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--grey)}
+  .lead{background:linear-gradient(135deg,#0b3b2e,#0e5c43);border-radius:14px;padding:15px 16px;margin-bottom:12px;color:#fff;box-shadow:0 6px 18px rgba(3,80,50,.22)}
+  .lead .badge{display:inline-block;background:#10b77f;color:#04261a;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;margin-bottom:7px}
+  .lead h2{font-size:17px;font-weight:800;letter-spacing:-.5px;margin-bottom:5px}
+  .lead p{font-size:13.5px;color:#d6f5e8}
+  /* connection map */
+  .map{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+  .map .head{padding:10px 14px;color:#fff;font-weight:700;font-size:15px;background:#7a3df8}
+  .map .body{padding:14px}
+  .root{display:flex;justify-content:center;margin-bottom:4px}
+  .root .chip{background:#111827;color:#fff;font-weight:800;font-size:14px;padding:8px 14px;border-radius:10px;text-align:center}
+  .root .chip small{display:block;font-weight:600;font-size:11px;color:#9db8df;margin-top:2px}
+  .down-arrow{text-align:center;color:#9aa5b4;font-size:18px;line-height:1.1;margin:2px 0}
+  .branch{border:1px solid var(--line);border-left:4px solid var(--bl);border-radius:10px;padding:9px 12px;margin-top:8px;background:#fbfcfe}
+  .branch .t{font-weight:800;font-size:13.5px;color:var(--bl)}
+  .branch .s{font-size:12.5px;color:#475467;margin-top:2px}
+  .branch .s b{color:var(--ink)}
+  .b1{--bl:#b42318} .b2{--bl:#1f4e79} .b3{--bl:#0e7490} .b4{--bl:#9333ea}
+  .sec{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+  .sec .head{padding:10px 14px;color:#fff;font-weight:700;font-size:15px}
+  .sec ul{list-style:none;padding:8px 14px 12px}
+  .sec li{position:relative;padding:7px 0 7px 16px;font-size:14.5px;border-bottom:1px solid #f1f4f8}
+  .sec li:last-child{border-bottom:0}
+  .sec li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.85}
+  .sec li b{font-weight:700}
+  .pct{color:var(--red);font-weight:800}
+  .h-red{background:#b42318} .h-navy{background:var(--navy)} .h-blue{background:var(--blue)}
+  .li-red{color:#b42318} .li-navy{color:var(--navy)} .li-blue{color:var(--blue)}
+  .li-red b,.li-navy b,.li-blue b{color:var(--ink)}
+  .caution{background:#fef3f2;border:1px solid #fda29b;color:#7a271a;border-radius:12px;padding:12px 14px;font-size:13px;font-weight:600;margin-top:4px}
+  .src{color:var(--grey);font-size:11.5px;margin-top:12px;text-align:center;line-height:1.6}
+  .updated{text-align:center;color:var(--grey);font-size:12px;margin:2px 0 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="tag">단타 투자자 브리핑<br>사실·데이터 정리 / 추천 아님</div>
+    <h1>장 시작 전 브리핑</h1>
+    <div class="date">2026년 6월 1일 (월) · 국내장 개장 09:00</div>
+  </div>
+
+  <div class="updated">최종 업데이트: 2026-06-01 08:00 KST</div>
+
+  <div class="metrics">
+    <div class="m"><div class="lab">코스피 5/29</div><div class="val">8,476</div><div class="sub up">▲ +3.55%</div></div>
+    <div class="m"><div class="lab">LG전자</div><div class="val">293,000</div><div class="sub up">▲ 상한가</div></div>
+    <div class="m"><div class="lab">두산로보틱스</div><div class="val">상한가</div><div class="sub up">▲ +30%</div></div>
+    <div class="m"><div class="lab">젠슨 황 방한</div><div class="val">D-DAY</div><div class="sub flat">6/1~3</div></div>
+  </div>
+
+  <div class="lead">
+    <span class="badge">오늘의 핵심 재료</span>
+    <h2>🤖 젠슨 황 방한 → 피지컬 AI 동맹</h2>
+    <p>엔비디아 젠슨 황 CEO가 6/1부터 사흘 방한. 구광모(LG)·이재용(삼성)·최태원(SK)·정의선(현대차)·이해진(네이버)과 연쇄 회동. 핵심 의제는 로봇·자율주행·스마트팩토리를 아우르는 <b style="color:#fff">'피지컬 AI'</b>. 이 한 재료가 아래처럼 번집니다.</p>
+  </div>
+
+  <div class="map">
+    <div class="head">🔗 테마 연결 지도 — 재료가 번지는 길</div>
+    <div class="body">
+      <div class="root"><div class="chip">엔비디아 · 젠슨 황 방한<small>피지컬 AI 동맹 (로봇·자율주행·스마트팩토리)</small></div></div>
+      <div class="down-arrow">▼</div>
+
+      <div class="branch b1">
+        <div class="t">① LG 그룹 — 핵심 파트너로 부상</div>
+        <div class="s">구광모 회장 회동. <b>LG전자 +29.9%(상한가)</b>, LG +26.6%, LG씨엔에스 +29.9%, LG이노텍 +28.6%. 가전·로봇·SI까지 그룹 재평가.</div>
+      </div>
+
+      <div class="branch b2">
+        <div class="t">② AI 기반 → 로봇주로 직결</div>
+        <div class="s">피지컬 AI = 로봇. <b>두산로보틱스·로보스타 상한가</b>, 로보티즈 +24.6%, 해성에어로보틱스 +23.6%, 엔젤로보틱스 +18.9%, 레인보우로보틱스 +14.8%.</div>
+      </div>
+
+      <div class="branch b3">
+        <div class="t">③ 한국 AI로봇 → 현대차그룹</div>
+        <div class="s">정의선 회장 회동 명단. <b>현대차(보스턴 다이내믹스)</b> 등 자율주행·로보틱스 밸류체인으로 확산.</div>
+      </div>
+
+      <div class="branch b4">
+        <div class="t">④ 엔비디아 공급망 → 반도체</div>
+        <div class="s">이재용·최태원 회동. <b>삼성전자·SK하이닉스</b> HBM·첨단 패키징·AI 서버가 직접 수혜축.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="head h-red">🚀 오늘 움직인 종목 (등락·이유)</div>
+    <ul class="li-red">
+      <li><b>LG전자</b> <span class="pct">+29.93% 상한가</span> — 52주 신고가, 로봇 대장주로 부상.</li>
+      <li><b>두산로보틱스 / 로보스타</b> <span class="pct">상한가</span> — 엔비디아 로봇 협력 기대.</li>
+      <li><b>로보티즈 +24.6% · 해성에어로보틱스 +23.6% · 엔젤로보틱스 +18.9% · 레인보우로보틱스 +14.8%</b>.</li>
+      <li>※ 단기 급등 구간 — 추격은 변동성 큼. 단타 시 분할·손절선 명확히.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="head h-navy">📰 지수 · 수급</div>
+    <ul class="li-navy">
+      <li>코스피 5/29 <b>+3.55%(290.86p) → 8,476.15 사상 최고</b>, 6/1 장중 <b>8,800선 첫 돌파</b> 흐름.</li>
+      <li>수급 집중축: <b>HBM·첨단 패키징·AI 서버·로봇</b> (엔비디아 공급망 직결).</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <div class="head h-blue">🌎 밤새 해외증시 · 환율</div>
+    <ul class="li-blue">
+      <li>금요일(5/29) 미국 증시 <b>사상 최고치</b> — S&amp;P500 +0.2%(7,580), 나스닥 +0.2%.</li>
+      <li>원/달러 <b>1,507.9원</b> 약보합 · WTI <b>약 $87</b>(-1.7%).</li>
+      <li>체크포인트: 방한 회동 결과(추가 협력 발표), AI·로봇 차익실현 여부.</li>
+    </ul>
+  </div>
+
+  <div class="caution">⚠ 본 브리핑은 사실·데이터 정리용이며 매수/매도 추천이 아닙니다. 급등 종목은 변동성이 큽니다. 투자 판단과 책임은 본인에게 있으며, 단타는 손실 위험이 큽니다.</div>
+
+  <div class="src">Sources · 뉴시스, 서울신문, 서울경제, 이투데이, 머니투데이, 뉴스핌, 녹색경제신문 (2026-05-29~06-01)</div>
+
+</div>
+</body>
+</html>
